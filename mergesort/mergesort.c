@@ -61,6 +61,7 @@ void CopyArray(int A[], int iBegin, int iEnd, int B[])
         B[k] = A[k];
 }
 
+// Comment out/remove main() if including in another project. 
 int main()
 {
     int B[] = {0};
