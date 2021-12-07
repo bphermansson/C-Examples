@@ -14,10 +14,11 @@
 #include <stdio.h>
 
 // Array A[] has the items to sort; array B[] is a work array.
-void TopDownMergeSort(int A[], int B[], int n)
+int * TopDownMergeSort(int A[], int B[], int n)
 {
     CopyArray(A, 0, n, B);           // one time copy of A[] to B[]
     TopDownSplitMerge(B, 0, n, A);   // sort data from B[] into A[]
+    return A;
 }
 
 // Split A[] into 2 runs, sort both runs into B[], merge both runs from B[] to A[]
@@ -77,10 +78,13 @@ int main()
 
     TopDownMergeSort(A, B, length);
 
+    int *sorted = TopDownMergeSort(A, B, length);
+
+
     printf("Sorted list: ");
     for(int y=0;y<=4;y++)
     {
-        printf("%d,", A[y]);
+        printf("%d,", sorted[y]);
     }
     printf("\n");
     return 0;
